@@ -7,9 +7,14 @@
   color: #000
   -webkit-text-stroke: 2px #fff
   text-stroke: 2px #fff
+  -moz-text-stroke: 2px #fff
   @media screen and(max-width: 47em)
     -webkit-text-stroke: 1px #fff
     text-stroke: 1px #fff
+
+::-moz-selection
+  background: #fff
+  color: #000
 
 body
   background: #000
@@ -18,6 +23,7 @@ body
   font-size: 3.375rem
   line-height: 100%
   -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
   overflow-x: hidden
   transition: all .4s ease-in-out
   word-wrap: break-word
@@ -38,7 +44,6 @@ section.full
     -webkit-mask-size: 100% 100%
     mask-size: 100% 100%
     transition: all .2s ease-in-out
-    background: #fff
     margin-bottom: 10rem
     float: left
 
@@ -49,6 +54,26 @@ section.full
     -webkit-mask-size: 100% 100%
     mask-size: 100% 100%
     margin-bottom: 0
+    margin-top: 10rem
+
+  div.white
+    background: #fff
+  @-moz-document url-prefix()
+    div.hi
+      height: 100%
+      width: 100%
+      background: url('../img/hi.svg') no-repeat
+      background-size: 100% 100%
+
+    div.bye
+      height: 100%
+      width: 100%
+      background: url('../img/bye.svg') no-repeat
+      background-size: 100% 100%
+
+    .hi, .bye
+      background: #fff
+
 
 section.container
   max-width: 90rem
@@ -56,7 +81,6 @@ section.container
   margin-left: auto
   margin-right: auto
   padding: 2rem
-  display: inline-block
   @media screen and(max-width: 47em)
     padding: 1rem
 
@@ -73,9 +97,9 @@ section.container
       width: 100%
 
   article
-    display: inline-block
     margin-top: 10rem
     width: 100%
+    display: inline-block
     @media screen and(max-width: 47em)
       margin-top: 3rem
       h2
@@ -93,9 +117,9 @@ section.container
       img
         margin: 0 auto
         width: 100%
-        border: 2rem solid rgba(255,255,255,.1)
+        border: 2rem solid rgba(255,255,255,.075)
         @media screen and(max-width: 47em)
-          border: .75rem solid rgba(255,255,255,.1)
+          border: .75rem solid rgba(255,255,255,.075)
     a.external
       display: inline-block
       margin-top: 3.75rem
@@ -103,9 +127,10 @@ section.container
         margin-top: 1rem
 
 section.writing, section.shoutouts
-  border-top: 1.875rem solid rgba(255,255,255,.1)
+  border-top: 1.875rem solid rgba(255,255,255,.075)
   margin-top: 10rem
-  padding-top: 3.125rem
+  article
+    margin-top: 0
   @media screen and(max-width: 47em)
     margin-top: 3.125rem
     h3
